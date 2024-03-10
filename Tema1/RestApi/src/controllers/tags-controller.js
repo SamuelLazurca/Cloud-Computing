@@ -29,7 +29,7 @@ class TagsController {
   static async create(req, res) {
     try {
       const new_tag = await service.createNewTag(req);
-      res.writeHead(201, { "Content-Type": "application/json" });
+      res.writeHead(201, { "Location": "/tags/" + new_tag.id, "Content-Type": "application/json"});
       res.end(JSON.stringify(new_tag));
     } catch (error) {
       if (error instanceof invalid_request) {

@@ -10,7 +10,7 @@ class MoviesController {
   static async create(req, res) {
     try {
       const new_movie = await service.createNewMovie(req);
-      res.writeHead(201, { "Content-Type": "application/json" });
+      res.writeHead(201, { "Location": "/movies/" + new_movie.id, "Content-Type": "application/json" });
       res.end(JSON.stringify(new_movie));
     } catch (error) {
       if (error instanceof invalid_request) {
