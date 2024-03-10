@@ -1,12 +1,12 @@
 const log = {
     info: (info) => {
-        console.log("Info: " + info);
+        console.log("INFO: " + info);
     },
     warning: (warning) => {
-        console.log("Warning: " + warning);
+        console.log("WARNING: " + warning);
     },
     error: (error) => {
-        console.log("Error: " + error);
+        console.log("ERROR: " + error);
     }
 }
 

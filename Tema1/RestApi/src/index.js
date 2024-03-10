@@ -1,14 +1,14 @@
 var http = require("http");
 var process = require("./req-process");
 var requestProcesser = process.RequestProcesser;
-var logger = require("./logger.js");
-var req = require('./request.js');
+var logger = require("./utils/logger.js");
+var req = require('./utils/request.js');
 const log = logger.log;
 
 var server = http.createServer(function (request, response) {
-  process.RequestProcesser.process(request, response);
+  requestProcesser.process(request, response);
 });
 
 server.listen(3000);
 
-console.log("Server is running on port 3000");
+log.info("Server is running on port 3000");
