@@ -26,6 +26,18 @@ class RequestProcesser {
 
       if (reqObj.url.match("^/tags/?$") && reqObj.method == "GET") {
         tagsController.getAll(request, response);
+      } else if (reqObj.url.match("^/tags/?$") && reqObj.method == "DELETE") {
+        response.writeHeader(405, { "Content-Type": "application/json" });
+        response.end();
+      } else if (reqObj.url.match("^/tags/?$") && reqObj.method == "PUT") {
+        response.writeHeader(405, { "Content-Type": "application/json" });
+        response.end();
+      } else if (reqObj.url.match("^/movies/?$") && reqObj.method == "DELETE") {
+        response.writeHeader(405, { "Content-Type": "application/json" });
+        response.end();
+      } else if (reqObj.url.match("^/movies/?$") && reqObj.method == "PUT") {
+        response.writeHeader(405, { "Content-Type": "application/json" });
+        response.end();
       } else if (reqObj.url.match("^/tags/?$") && reqObj.method == "POST") {
         tagsController.create(reqObj.body, response);
       } else if (
