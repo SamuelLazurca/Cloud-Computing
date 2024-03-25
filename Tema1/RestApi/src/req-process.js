@@ -6,10 +6,19 @@ var tagsController = require("./controllers/tags-controller.js").TagsController;
 var moviesController =
   require("./controllers/movies-controller.js").MoviesController;
 var parse_exception = require("./exceptions/parse-exception").ParseException;
+require("dotenv").config();
 
 class RequestProcesser {
   static async process(request, response) {
     try {
+      const apiKey = request.headers["x-api-key"];
+
+      if (!apiKey || apiKey !== process.env.API_KEY) {
+        response.writeHead(401, { "Content-Type": "application/json" });
+        response.end(JSON.stringify({ message: "Unauthorized" }));
+        return;
+      }
+
       let url = request.url;
       let method = request.method;
       let data = await utils.getRequestBodyData(request);

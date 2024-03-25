@@ -1,5 +1,6 @@
 var sqlite3 = require("sqlite3");
 var logger = require("./utils/logger.js");
+//const uuid = require("uuid");
 
 const log = logger.log;
 
@@ -11,6 +12,20 @@ const db = new sqlite3.Database(
   }
 );
 
+/*db.run(
+  "INSERT INTO tags (id, name) VALUES(?, 'horror')",
+  [uuid.v4()],
+  (error) => {
+    if (error) {
+      console.log(error);
+    }
+  }
+);
+(error) => {
+  if (error) {
+    console.log(error);
+  }
+};*/
 
 /*db.exec(
   `

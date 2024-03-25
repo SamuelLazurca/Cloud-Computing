@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .ticket {
+        width: 5.5in;
+        height: 3.5in;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      .ticket-header {
+        text-align: center;
+      }
+      .ticket-title {
+        font-size: 24px;
+        margin: 0;
+      }
+      .ticket-body {
+        margin-top: 20px;
+      }
+      .ticket-info-item {
+        margin-bottom: 10px;
+      }
+      .ticket-info-label {
+        font-weight: bold;
+      }
+      .ticket-footer {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .ticket-footer-text {
+        font-style: italic;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <div class="ticket">
+        <div class="ticket-header">
+          <h1 class="ticket-title">Movie Ticket</h1>
+          <h5 class="ticket-info-value">Ticket ID: <%= id %></h5>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-info">
+            <div class="ticket-info-item">
+              <span class="ticket-info-label">Buyer Name:</span>
+              <span class="ticket-info-value"><%= name %></span>
+            </div>
+            <div class="ticket-info-item">
+              <span class="ticket-info-label">Movie:</span>
+              <span class="ticket-info-value"><%= movie %></span>
+            </div>
+            <div class="ticket-info-item">
+              <span class="ticket-info-label">Location:</span>
+              <span class="ticket-info-value"><%= location %></span>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <p class="ticket-footer-text">Thank you for booking with us!</p>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>
